@@ -492,7 +492,7 @@
           this.options.template.caret +
           '</span>' +
           '</button>' +
-          '<div class="dropdown-menu open" role="combobox">' +
+          '<div class="dropdown-menu show" role="combobox">' +
           header +
           searchbox +
           actionsbox +
@@ -830,8 +830,8 @@
           doneButton = this.options.doneButton && this.multiple && this.$menu.find('.bs-donebutton').length > 0 ? this.$menu.find('.bs-donebutton')[0].cloneNode(true) : null;
 
       text.className = 'text';
-      newElement.className = this.$menu[0].parentNode.className + ' open';
-      menu.className = 'dropdown-menu open';
+      newElement.className = this.$menu[0].parentNode.className + ' show';
+      menu.className = 'dropdown-menu show';
       menuInner.className = 'dropdown-menu inner';
       divider.className = 'divider';
 
@@ -1117,7 +1117,7 @@
 
         that.$bsContainer
           .appendTo(that.options.container)
-          .toggleClass('open', !$this.hasClass('open'))
+          .toggleClass('show', !$this.hasClass('show'))
           .append(that.$menu);
       });
 
@@ -1599,12 +1599,12 @@
           };
 
 
-      isActive = that.$newElement.hasClass('open');
+      isActive = that.$newElement.hasClass('show');
 
       if (!isActive && (e.keyCode >= 48 && e.keyCode <= 57 || e.keyCode >= 96 && e.keyCode <= 105 || e.keyCode >= 65 && e.keyCode <= 90)) {
         if (!that.options.container) {
           that.setSize();
-          that.$menu.parent().addClass('open');
+          that.$menu.parent().addClass('show');
           isActive = true;
         } else {
           that.$button.trigger('click');
@@ -1703,8 +1703,8 @@
       }
 
       if ((/(^9$|27)/.test(e.keyCode.toString(10)) && isActive && (that.multiple || that.options.liveSearch)) || (/(27)/.test(e.keyCode.toString(10)) && !isActive)) {
-        that.$menu.parent().removeClass('open');
-        if (that.options.container) that.$newElement.removeClass('open');
+        that.$menu.parent().removeClass('show');
+        if (that.options.container) that.$newElement.removeClass('show');
         that.$button.focus();
       }
     },

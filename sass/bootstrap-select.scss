@@ -287,7 +287,7 @@ select.selectpicker {
 }
 
 .bootstrap-select.show-menu-arrow {
-  &.open > .dropdown-toggle {
+  &.show > .dropdown-toggle {
     z-index: ($zindex-select-dropdown + 1);
   }
 
@@ -343,7 +343,7 @@ select.selectpicker {
     }
   }
 
-  &.open > .dropdown-toggle {
+  &.show > .dropdown-toggle {
     &:before,
     &:after {
       display: block;
